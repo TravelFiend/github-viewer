@@ -1,4 +1,4 @@
-import getGithubInfo from '../services/getGithubInfo';
+import { getGithubInfo } from '../services/getGithubInfo';
 
 export const FETCH_INFO_LOADING = 'FETCH_INFO_LOADING';
 export const FETCH_USER_INFO = 'FETCH_USER_INFO';
@@ -12,3 +12,5 @@ export const fetchUserInfo = loginName => dispatch => {
       });
     });
 };
+
+

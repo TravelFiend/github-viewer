@@ -10,7 +10,7 @@ default function App() {
     <>
       <Header />
       <UsernameInput onSubmit={() => {}} onChange={() => {}} />
-      <UserInfo name={'Frogs'} followerCount={'Frogs'} followingCount={'Frogs'} login={'Frogs'} />
+      <UserInfo name={'Frogs'} followerCount={3} followingCount={5} login={'Frogs'} />
     </>
   );
 }
