@@ -3,9 +3,7 @@ import UsernameInput from './username-input/UsernameInput';
 import UserInfo from './user-info/UserInfo';
 import Header from './header/Header';
 
-export 
-
-default function App() {
+export default function App() {
   return (
     <>
       <Header />

@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { fetchUserInfo } from '../../actions/userInfoActions';
+import { getUserInfo } from '../../selectors/userInfoSelectors';
 import styles from './UserInfo.css';
 
-const UserInfo = ({ name, followerCount, followingCount, login }) => (
-  <section className={styles.UserInfo}>
-    <span>{name}</span>
-    <span>{followerCount}</span>
-    <span>{followingCount}</span>
-    <span><a href={`https://github.com/${login}`}>{login}</a></span>
-  </section>
-);
+const UserInfo = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserInfo());
+  });
+
+  return (
+    <section className={styles.UserInfo}>
+      <span>{name}</span>
+      <span>{followers}</span>
+      <span>{following}</span>
+      <span><a href={profileUrl}>{profileUrl}</a></span>
+    </section>
+  );
+};
 
 UserInfo.propTypes = {
   name: PropTypes.string.isRequired,
