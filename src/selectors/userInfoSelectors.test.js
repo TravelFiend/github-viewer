@@ -54,6 +54,7 @@ describe('user info selectors', () => {
 
     expect(getUserInfo(state)).toEqual({ 
       name: 'Mike Grace',
+      login: 'TravelFiend',
       followers: 6,
       following: 5,
       profileUrl: 'https://github.com/TravelFiend'
