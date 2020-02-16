@@ -9,7 +9,9 @@ const reducer = (state = initialState, action) => {
   switch(action.type){
     case FETCH_INFO_LOADING:
       return { ...state, loading: true };
-    default: return state;xs;
+    case FETCH_USER_INFO:
+      return { ...state, loading: false, info: action.payload };
+    default: return state;
   }
 };
 
