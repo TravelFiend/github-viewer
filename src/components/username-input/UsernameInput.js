@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './UsernameInput.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUsername, fetchUserInfo } from '../../actions/userInfoActions';
-import { getUserName, getUserInfo } from '../../selectors/userInfoSelectors';
+import { getUserName } from '../../selectors/userInfoSelectors';
 
 const UsernameInput = () => {
   const dispatch = useDispatch();

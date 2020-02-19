@@ -16,9 +16,9 @@ const UserInfo = () => {
 
   return (
     <section className={styles.UserInfo}>
-      <span>{username}</span>
-      <span>{userInfo.followers}</span>
-      <span>{userInfo.following}</span>
+      <span>{userInfo.login}</span>
+      <span>Followers: {userInfo.followers}</span>
+      <span>Following: {userInfo.following}</span>
       {/* <span><a href={profileUrl}>{profileUrl}</a></span> */}
     </section>
   );
