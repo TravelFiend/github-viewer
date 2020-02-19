@@ -3,6 +3,7 @@ import styles from './UsernameInput.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUsername, fetchUserInfo } from '../../actions/userInfoActions';
 import { getUserName } from '../../selectors/userInfoSelectors';
+import { fetchRepos } from '../../actions/userReposAction';
 
 const UsernameInput = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const UsernameInput = () => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(fetchUserInfo(username));
+    dispatch(fetchRepos(username));
   };
 
   return (
