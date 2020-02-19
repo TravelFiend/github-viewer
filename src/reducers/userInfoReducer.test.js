@@ -1,4 +1,4 @@
-import { FETCH_USER_INFO, FETCH_INFO_LOADING } from '../actions/userInfoActions';
+import { FETCH_USER_INFO, FETCH_INFO_LOADING, SET_USERNAME } from '../actions/userInfoActions';
 import reducer from './userInfoReducer';
 
 describe('user info reducer', () => {
@@ -96,6 +96,23 @@ describe('user info reducer', () => {
         'created_at': '2017-05-31T06:19:18Z',
         'updated_at': '2020-02-14T21:39:59Z'
       }
+    });
+  });
+
+  it('should handle set username action', () => {
+    const action = { type: SET_USERNAME, payload: 'Willy Billy Wonka' };
+    const initialState = {
+      loading: false,
+      info: {},
+      username: 'DingleDoof'
+    };
+
+    const stateNow = reducer(initialState, action);
+
+    expect(stateNow).toEqual({
+      info: {},
+      loading: false,
+      username: 'Willy Billy Wonka'
     });
   });
 });

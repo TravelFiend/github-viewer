@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchUserInfo } from '../../actions/userInfoActions';
-import { getUserInfo } from '../../selectors/userInfoSelectors';
+import { getUserInfo, getUserName } from '../../selectors/userInfoSelectors';
 import styles from './UserInfo.css';
 
 const UserInfo = () => {
   const dispatch = useDispatch();
+  const username = useSelector(getUserName);
+  const userInfo = useSelector(getUserInfo);
 
   useEffect(() => {
     dispatch(fetchUserInfo());
-  });
+  }, []);
 
   return (
     <section className={styles.UserInfo}>
-      <span>{name}</span>
-      <span>{followers}</span>
-      <span>{following}</span>
-      <span><a href={profileUrl}>{profileUrl}</a></span>
+      <span>{username}</span>
+      <span>{userInfo.followers}</span>
+      <span>{userInfo.following}</span>
+      {/* <span><a href={profileUrl}>{profileUrl}</a></span> */}
     </section>
   );
 };

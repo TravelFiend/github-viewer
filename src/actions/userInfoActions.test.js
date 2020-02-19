@@ -1,4 +1,10 @@
-import { fetchUserInfo, FETCH_USER_INFO, FETCH_INFO_LOADING } from './userInfoActions';
+import {
+  fetchUserInfo,
+  FETCH_USER_INFO,
+  FETCH_INFO_LOADING,
+  SET_USERNAME,
+  setUsername
+} from './userInfoActions';
 
 jest.mock('../services/getGithubInfo.js');
 
@@ -49,5 +55,14 @@ describe('user info actions', () => {
           }
         });
       });
+  });
+
+  it('should create a set username action', () => {
+    const action = setUsername('toot');
+
+    expect(action).toEqual({
+      type: SET_USERNAME,
+      payload: 'toot'
+    });
   });
 });

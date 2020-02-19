@@ -3,10 +3,7 @@
 exports[`App component renders App 1`] = `
 <Fragment>
   <Header />
-  <UsernameInput
-    onChange={[Function]}
-    onSubmit={[Function]}
-  />
+  <UsernameInput />
   <UserInfo
     followerCount={3}
     followingCount={5}

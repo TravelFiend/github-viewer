@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <UsernameInput onSubmit={() => {}} onChange={() => {}} />
+      <UsernameInput />
       <UserInfo name={'Frogs'} followerCount={3} followingCount={5} login={'Frogs'} />
     </>
   );
