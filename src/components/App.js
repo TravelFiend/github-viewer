@@ -1,16 +1,8 @@
-import React from 'react';
-import UsernameInput from './username-input/UsernameInput';
-import UserInfo from './user-info/UserInfo';
-import Header from './header/Header';
+import React from 'react'; 
+import GithubViewer from '../containers/GithubViewer';
 
-export 
-
-default function App() {
+export default function App() {
   return (
-    <>
-      <Header />
-      <UsernameInput onSubmit={() => {}} onChange={() => {}} />
-      <UserInfo name={'Frogs'} followerCount={'Frogs'} followingCount={'Frogs'} login={'Frogs'} />
-    </>
+    <GithubViewer />
   );
 }

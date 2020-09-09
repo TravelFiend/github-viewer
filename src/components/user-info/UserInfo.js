@@ -1,15 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getUserInfo } from '../../selectors/userInfoSelectors';
 import styles from './UserInfo.css';
 
-const UserInfo = ({ name, followerCount, followingCount, login }) => (
-  <section className={styles.UserInfo}>
-    <span>{name}</span>
-    <span>{followerCount}</span>
-    <span>{followingCount}</span>
-    <span><a href={`https://github.com/${login}`}>{login}</a></span>
-  </section>
-);
+const UserInfo = () => {
+  const userInfo = useSelector(getUserInfo);
+
+  return (
+    <section className={styles.UserInfo}>
+      {userInfo.login !== undefined && <span>{userInfo.login}</span>}
+      <img src={userInfo.avatar_url} />
+      <span>Followers: {userInfo.followers}</span>
+      <span>Following: {userInfo.following}</span>
+    </section>
+  );
+};
 
 UserInfo.propTypes = {
   name: PropTypes.string.isRequired,
